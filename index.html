@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashcard Study App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Flashcard Quiz</h1>
+
+        <!-- Card Display Section -->
+        <div class="card-container" id="flashcard">
+            <div class="card" id="card-inner">
+                <div class="card-face card-front">
+                    <p id="questionText">Loading cards...</p>
+                </div>
+                <div class="card-face card-back">
+                    <p id="answerText">...</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation & Flip Controls -->
+        <div class="nav-controls">
+            <button class="btn-nav" id="prevBtn">← Previous</button>
+            <span id="cardIndicator">0 / 0</span>
+            <button class="btn-nav" id="nextBtn">Next →</button>
+        </div>
+
+        <div class="main-action">
+            <button id="flipBtn" class="btn-flip">Show Answer</button>
+        </div>
+
+        <!-- Management Section (CRUD) -->
+        <div class="admin-section">
+            <h2>Manage Deck</h2>
+            <div class="input-form">
+                <textarea id="questionInput" placeholder="Enter Question..."></textarea>
+                <textarea id="answerInput" placeholder="Enter Answer..."></textarea>
+                <button id="saveBtn">Add Flashcard</button>
+            </div>
+
+            <div class="card-list" id="cardList">
+                <!-- List items will be injected here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

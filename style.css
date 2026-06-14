@@ -1,0 +1,146 @@
+:root {
+    --primary: #6c5ce7;
+    --bg: #f0f2f5;
+    --text: #2d3436;
+    --white: #ffffff;
+    --shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+    margin: 0;
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+}
+
+h1, h2 { text-align: center; }
+
+/* 3D Card Animation */
+.card-container {
+    perspective: 1000px;
+    width: 100%;
+    height: 250px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+}
+
+.card.is-flipped {
+    transform: rotateY(180deg);
+}
+
+.card-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    background: var(--white);
+    box-shadow: var(--shadow);
+    font-size: 1.25rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.card-back {
+    transform: rotateY(180deg);
+    color: var(--primary);
+    background: #f9f9ff;
+}
+
+/* Controls */
+.nav-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.main-action {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-nav { background: #dfe6e9; color: var(--text); }
+.btn-nav:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.btn-flip {
+    background: var(--primary);
+    color: white;
+    width: 100%;
+    font-size: 1rem;
+}
+
+/* CRUD Section */
+.admin-section {
+    background: var(--white);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+}
+
+textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    resize: vertical;
+    box-sizing: border-box;
+}
+
+#saveBtn {
+    background: #00b894;
+    color: white;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.card-list {
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+}
+
+.list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+.btn-edit { background: #f1c40f; color: black; margin-right: 5px; }
+.btn-del { background: #ff7675; color: white; }
