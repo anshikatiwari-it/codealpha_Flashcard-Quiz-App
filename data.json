@@ -1,1 +1,1 @@
-echo "[]" > data.json
+echo  "\[\]" > data.json
